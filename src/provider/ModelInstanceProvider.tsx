@@ -9,8 +9,9 @@ interface ModelInstance {
 }
 
 interface ModelInstanceContextProps {
-    models: MutableRefObject<Map<string, ModelInstance>>; // Store models in a Map
-    addModel: (path: string, instance: Mesh) => void; // Method to load a model
+    models: MutableRefObject<Map<string, ModelInstance>>; 
+    addModel: (path: string, instance: Mesh) => void; 
+    getModel: (path: string) => Mesh | undefined;
 }
 
 export const ModelInstanceContext = createContext<ModelInstanceContextProps | undefined>(undefined);
@@ -34,10 +35,14 @@ export const ModelInstanceProvider = ({ children }: TypeEnfant ) => {
         models.current.set(path, { path, instance });
     };
 
+    const getModel = (path: string) => {
+        return models.current.get(path)?.instance;
+    };
+
     return (
         <ModelInstanceContext.Provider 
             value={{ 
-                models, addModel
+                models, addModel, getModel
             }}>
             {children}
         </ModelInstanceContext.Provider>

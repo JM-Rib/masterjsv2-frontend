@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-import { InstancedMesh, Mesh, Vector3 } from "three";
+import { InstancedMesh, Mesh, Vector3, Object3D } from "three";
 import { } from "@react-three/fiber"; // prevents annoying typescript error
 import { useLoader } from "@react-three/fiber"; 
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"; 
@@ -11,22 +11,33 @@ interface ModelsProps {
 }
   
 const Models: React.FC<ModelsProps> = ({ position = new Vector3(0,0,0),  modelPath }) => {
-    const { addModel, models } = useModelInstance(); 
+    const { addModel, getModel } = useModelInstance(); 
 
     const [modelLoaded, setModelLoaded] = useState<boolean>(false);
-    const [model, setModel] = useState<Mesh | null>(null); 
-
-    const loadedModel = useLoader(GLTFLoader, modelPath);
-  
-    useEffect(() => {
-        if (loadedModel && !models.current.has(modelPath)) {
-            setModel(loadedModel.scene.children[0] as Mesh);
-            addModel(modelPath, loadedModel.scene.children[0] as Mesh);
-            setModelLoaded(true); 
-        }
-    }, [loadedModel, modelPath, addModel, models]);
-        
     const meshRef = useRef<InstancedMesh>(null);
+    const loadedModel = useLoader(GLTFLoader, modelPath);
+    const cachedModel = getModel(modelPath); 
+
+    useEffect(() => {
+        if (loadedModel && !cachedModel) {
+            const mesh = loadedModel.scene.children[0] as Mesh;
+            addModel(modelPath, mesh);
+            setModelLoaded(true);
+        } else if (cachedModel) {
+            setModelLoaded(true);
+        }
+    }, [loadedModel, modelPath, addModel, cachedModel]);
+    
+    useEffect(() => {
+        if (meshRef.current && cachedModel) {
+          const dummy = new Object3D();
+          dummy.scale.set(0.2, 0.2, 0.2);
+          dummy.position.set(position.x, position.y, position.z);
+          dummy.updateMatrix();
+          meshRef.current.setMatrixAt(0, dummy.matrix);
+          meshRef.current.instanceMatrix.needsUpdate = true;
+        }
+      }, [position, cachedModel]); 
 
     return (
         <>
@@ -37,9 +48,9 @@ const Models: React.FC<ModelsProps> = ({ position = new Vector3(0,0,0),  modelPa
                 <instancedMesh
                     ref={meshRef}
                     args={[
-                        model?.geometry,
-                        model?.material instanceof Array ? model.material[0] : model?.material, 
-                        1, 
+                        cachedModel?.geometry, // Use the cached geometry
+                        cachedModel?.material instanceof Array ? cachedModel.material[0] : cachedModel?.material,
+                        4,
                     ]}
                 />
         }

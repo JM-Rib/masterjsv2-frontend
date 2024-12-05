@@ -10,6 +10,7 @@ function Accueil(props) {
         test <br></br>
         test <br></br>
         <LandingWheel></LandingWheel>
+        <LandingWheel></LandingWheel>
         test <br></br>
         test <br></br>
         test <br></br>
