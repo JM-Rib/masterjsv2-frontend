@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import { InstancedMesh, Mesh, Vector3, Object3D } from "three";
 import { } from "@react-three/fiber"; // prevents annoying typescript error
-import { useLoader } from "@react-three/fiber"; 
+import { Canvas, useLoader } from "@react-three/fiber"; 
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"; 
 import { useModelInstance } from '../provider/ModelInstanceProvider.tsx';
 
@@ -45,6 +45,8 @@ const Models: React.FC<ModelsProps> = ({ position = new Vector3(0,0,0),  modelPa
             !modelLoaded ?
                 null
             :
+            <Canvas shadows camera={{ position: [0, 0, 9], fov:65, zoom:4 }} >
+                <pointLight decay={0} intensity={3} position={[4, 4, 3]} castShadow shadow-mapSize-width={1024} shadow-mapSize-height={1024} />
                 <instancedMesh
                     ref={meshRef}
                     args={[
@@ -53,6 +55,7 @@ const Models: React.FC<ModelsProps> = ({ position = new Vector3(0,0,0),  modelPa
                         4,
                     ]}
                 />
+            </Canvas>
         }
         </>
     );
