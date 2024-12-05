@@ -1,8 +1,6 @@
-import React, {useState, useRef} from 'react';
+import React, {useState} from 'react';
 import { MegaMenu } from 'primereact/megamenu';
-import { InputText } from 'primereact/inputtext';
 import { Ripple } from 'primereact/ripple';
-import { Button } from 'primereact/button';
 import { Avatar } from 'primereact/avatar';
 
 
@@ -61,7 +59,7 @@ export default function Navbar() {
             label: 'Company',
             root: true,
             template: itemRenderer,
-            style: {"margin-left": "12px"},
+            style: {marginLeft: "12px"},
             items: [
                 [
                     {
@@ -101,13 +99,13 @@ export default function Navbar() {
             label: 'Resources',
             root: true,
             template: itemRenderer,
-            style: {"margin-left": "12px"},
+            style: {marginLeft: "12px"},
         },
         {
             label: 'Contact',
             root: true,
             template: itemRenderer,
-            style: {"margin-left": "12px"}
+            style: {marginLeft: "12px"}
         }
     ];
 
