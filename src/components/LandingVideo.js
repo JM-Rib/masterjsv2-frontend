@@ -14,7 +14,7 @@ function LandingWheel(props) {
   
 	return (
         <div className="w-24 h-24 bg-blue-200 rounded-full">
-            <Canvas shadows camera={{ position: [0, 3, 9], fov:65 }} style={{height: "250px"}}>
+            <Canvas shadows camera={{ position: [0, 0, 9], fov:65, zoom:4 }} >
                 <pointLight decay={0} intensity={3} position={[4, 4, 3]} castShadow shadow-mapSize-width={1024} shadow-mapSize-height={1024} />
                 <Models></Models>
             </Canvas>
