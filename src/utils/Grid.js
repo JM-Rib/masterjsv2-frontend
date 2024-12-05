@@ -65,6 +65,18 @@ function Grid({ children, scale, divisions = 10, ...props }) {
           <planeGeometry />
           <meshStandardMaterial transparent color="lightblue" polygonOffset polygonOffsetUnits={1} polygonOffsetFactor={1} />
         </mesh>
+        <mesh receiveShadow position={[0, 0.25,-0.5]}>
+          <planeGeometry args={[1,0.5]}/>
+          <meshStandardMaterial color="#ffffff" polygonOffset polygonOffsetUnits={1} polygonOffsetFactor={1} />
+        </mesh>
+        <mesh position={[0.5, 0.25 , 0]}  rotation-y={-Math.PI/2}>
+          <planeGeometry args={[1,0.5]}/>
+          <meshStandardMaterial color="#e0e0e0" polygonOffset polygonOffsetUnits={1} polygonOffsetFactor={1} />
+        </mesh>
+        <mesh receiveShadow position={[-0.5, 0.25 , 0]}  rotation-y={Math.PI/2}>
+          <planeGeometry args={[1,0.5]}/>
+          <meshStandardMaterial color="#e0e0e0" polygonOffset polygonOffsetUnits={1} polygonOffsetFactor={1} />
+        </mesh>
       </group>
       <context.Provider value={activate}>{children}</context.Provider>
     </group>
