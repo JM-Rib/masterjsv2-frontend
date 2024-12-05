@@ -618,10 +618,6 @@ video {
     column-gap: 1rem;
   }
 
-  .gap-x-2{
-    column-gap: 0.5rem;
-  }
-
   .rounded{
     border-radius: 0.25rem;
   }
