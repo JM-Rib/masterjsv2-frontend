@@ -24,4 +24,5 @@ export const BALLS = {
 
 export const OBJECTS = {
   GOAL: `/objects/goal_net.gltf`,
+  BLOOD: `/objects/drop_of_blood.gltf`,
 }
