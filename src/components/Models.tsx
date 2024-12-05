@@ -1,6 +1,8 @@
 import React, { useRef, useEffect } from "react";
-import { InstancedMesh, Object3D, BoxGeometry, MeshStandardMaterial } from "three";
+import { InstancedMesh, Object3D, BoxGeometry, MeshStandardMaterial, Mesh } from "three";
 import { } from "@react-three/fiber"; // prevents annoying typescript error
+import { useLoader } from "@react-three/fiber"; 
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"; 
 import { OBJECTS } from "../utils/constants";
 
 const Models: React.FC<{ }> = () => {
@@ -11,11 +13,13 @@ const Models: React.FC<{ }> = () => {
         z: 0
     }
     const meshRef = useRef<InstancedMesh>(null);
+    const model = useLoader(GLTFLoader, OBJECTS.BLOOD);
+    const mesh = model.scene.children.find(child => child instanceof Mesh) as Mesh | undefined;
 
     // gamegrid => position info
 
     useEffect(() => {
-        if (meshRef.current !== null ) {
+        if (meshRef.current !== null && model ) {
             const dummy = new Object3D();
             let instanceIndex = 0;
 
@@ -27,9 +31,6 @@ const Models: React.FC<{ }> = () => {
             instanceIndex++;
 
             meshRef.current.instanceMatrix.needsUpdate = true;
-            if( meshRef.current?.instanceColor !== null){
-              meshRef.current.instanceColor.needsUpdate = true;  // update colors
-            }  
         }
     }, [position]);
 
@@ -37,9 +38,9 @@ const Models: React.FC<{ }> = () => {
         <instancedMesh
             ref={meshRef}
             args={[
-                new BoxGeometry(1, 1, 1),  // Cube geometry
-                new MeshStandardMaterial({ color: "transparent" }), // Default material
-                instanceCount, // Number of instances
+                mesh?.geometry,
+                mesh?.material instanceof Array ? mesh.material[0] : mesh?.material, // Preserve the material from the model
+                instanceCount, 
             ]}
         />
     );
