@@ -1,22 +1,37 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { InstancedMesh, Object3D, BoxGeometry, MeshStandardMaterial, Mesh, Vector3 } from "three";
 import { } from "@react-three/fiber"; // prevents annoying typescript error
 import { useLoader } from "@react-three/fiber"; 
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"; 
 import { OBJECTS } from "../utils/constants";
+import { useModelInstance } from '../provider/ModelInstanceProvider.tsx';
 
 interface ModelsProps {
     position?: Vector3; // Accept position as a prop of type Vector3
-  }
+    modelPath: string;
+}
   
-const Models: React.FC<ModelsProps> = ({ position = new Vector3(0,0,0) }) => {
+const Models: React.FC<ModelsProps> = ({ position = new Vector3(0,0,0),  modelPath }) => {
+    const { addModel, models } = useModelInstance(); 
+    // const model = models.current.get(modelPath)?.instance;
+
+    const [modelLoaded, setModelLoaded] = useState<boolean>(false);
+    const [model, setModel] = useState<Mesh | null>(null); 
+
+    const loadedModel = useLoader(GLTFLoader, modelPath);
+    // const mesh = loadedModel.scene.children[0] as Mesh;
+  
+    useEffect(() => {
+        if (loadedModel && !models.current.has(modelPath)) {
+            setModel(loadedModel.scene.children[0] as Mesh);
+            addModel(modelPath, loadedModel.scene.children[0] as Mesh);
+            setModelLoaded(true); 
+        }
+    }, [loadedModel, modelPath, addModel, models]);
+        
     const instanceCount = 4;
 
     const meshRef = useRef<InstancedMesh>(null);
-    const model = useLoader(GLTFLoader, OBJECTS.BLOOD);
-    const mesh = model.scene.children.find(child => child instanceof Mesh) as Mesh | undefined;
-
-    // gamegrid => position info
 
     useEffect(() => {
         if (meshRef.current !== null && model ) {
@@ -28,21 +43,30 @@ const Models: React.FC<ModelsProps> = ({ position = new Vector3(0,0,0) }) => {
             dummy.updateMatrix();
             meshRef.current?.setMatrixAt(instanceIndex, dummy.matrix);
 
-            instanceIndex++;
-
             meshRef.current.instanceMatrix.needsUpdate = true;
         }
-    }, [position]);
+    }, [position, model]);
+
+    if (!model) {
+        return null;
+    }
 
     return (
-        <instancedMesh
-            ref={meshRef}
-            args={[
-                mesh?.geometry,
-                mesh?.material instanceof Array ? mesh.material[0] : mesh?.material, // Preserve the material from the model
-                instanceCount, 
-            ]}
-        />
+        <>
+        {
+            !modelLoaded ?
+                null
+            :
+                <instancedMesh
+                    ref={meshRef}
+                    args={[
+                        model?.geometry,
+                        model?.material instanceof Array ? model.material[0] : model?.material, 
+                        instanceCount, 
+                    ]}
+                />
+        }
+        </>
     );
 };
 
