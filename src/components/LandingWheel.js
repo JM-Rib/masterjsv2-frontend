@@ -25,7 +25,7 @@ function LandingWheel(props) {
             model: BODY_PARTS.BLOOD,
         },
         {
-            page: APP_ROUTES.COURANTS,
+            page: APP_ROUTES.POMPE_THERMOHALINE,
             model: BODY_PARTS.HEART,
         },
         {

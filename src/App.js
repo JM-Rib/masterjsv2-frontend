@@ -10,6 +10,8 @@ import Phytoplancton from './pages/Phytoplancton.js';
 import Biodiversite from './pages/Biodiversite.js';
 import Corail from './pages/Corail.js';
 import Biosphere from './pages/Biosphere.js';
+import Ressources from './pages/Ressources.js';
+import Contact from './pages/Contact.js';
 
 function App() {
   return (
@@ -17,11 +19,19 @@ function App() {
           <BrowserRouter>
           <ModelInstanceProvider>
           <Navbar className='' style={{zIndex: 99}} />
-          <div className='h-[5.6rem]'></div>
+          <div className='h-[5.4rem]'></div>
               <Routes>
                   <Route
                     path="/"
                     element={<Accueil />}
+                  />
+                  <Route
+                    path={APP_ROUTES.RESSOURCES}
+                    element={<Ressources />}
+                  />
+                  <Route
+                    path={APP_ROUTES.CONTACT}
+                    element={<Contact />}
                   />
                   <Route
                     path={APP_ROUTES.POMPE_THERMOHALINE}

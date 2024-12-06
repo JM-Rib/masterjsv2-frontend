@@ -5,6 +5,8 @@ export const API_ROUTES = {
 export const APP_ROUTES = {
   LOGIN: `/login`,
   ACCUEIL: `/`,
+  CONTACT: `/contact`,
+  RESSOURCES: `/ressources`,
   POMPE_THERMOHALINE: `/pompeThermohaline`,
   PHYTOPLANCTON: `/phytoplancton`,
   BIODIVERSITE: `/biodiversite`,
@@ -29,7 +31,13 @@ export const BALLS = {
 }
 
 export const OBJECTS = {
-  GOAL: `/objects/goal_net.gltf`
+  GOAL: `/objects/goal_net.gltf`,
+  LINK: `/objects/link.gltf`,
+  INCOMING_ENVELOPE: `/objects/incoming_envelope.gltf`
+}
+
+export const PLACES = {
+  HOUSE: `/places/house.gltf`
 }
 
 export const NATURE = {
