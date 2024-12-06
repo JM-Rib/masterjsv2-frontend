@@ -3,9 +3,9 @@ import WheelCell from './WheelCell.js';
 import { OBJECTS } from '../utils/constants.js';
 
 function LandingWheel(props) {
-    const radius = 220; // Radius of the octagon
-    const centerX = 285; // Center X position
-    const centerY = 285; // Center Y position
+    const radius = 200; // Radius of the octagon
+    const centerX = 270; // Center X position
+    const centerY = 270; // Center Y position
     const models = [OBJECTS.HEART, OBJECTS.HEART, OBJECTS.HEART, OBJECTS.HEART, OBJECTS.HEART, OBJECTS.HEART, OBJECTS.BLOOD, OBJECTS.HEART];
 
     return (
