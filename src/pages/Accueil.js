@@ -4,7 +4,6 @@ function Accueil(props) {
   
 	return (
     <div>
-        <div className='h-[5.6rem]'></div>
         <LandingWheel></LandingWheel>
     </div>
     );

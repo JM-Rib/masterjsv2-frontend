@@ -5,6 +5,12 @@ export const API_ROUTES = {
 export const APP_ROUTES = {
   LOGIN: `/login`,
   ACCUEIL: `/`,
+  POMPE_THERMOHALINE: `/pompeThermohaline`,
+  PHYTOPLANCTON: `/phytoplancton`,
+  BIODIVERSITE: `/biodiversite`,
+  CORAIL: `/corail`,
+  BIOSPHERE: `/biosphere`,
+  COURANTS: `/courants`
 }
   
 /*usage :  
