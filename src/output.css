@@ -587,24 +587,8 @@ video {
     margin-bottom: 1.5rem;
   }
 
-  .ml-6{
-    margin-left: 1.5rem;
-  }
-
-  .mt-6{
-    margin-top: 1.5rem;
-  }
-
   .mt-8{
     margin-top: 2rem;
-  }
-
-  .ml-3{
-    margin-left: 0.75rem;
-  }
-
-  .ml-7{
-    margin-left: 1.75rem;
   }
 
   .block{
@@ -631,8 +615,8 @@ video {
     height: 8rem;
   }
 
-  .h-\[5\.6rem\]{
-    height: 5.6rem;
+  .h-\[5\.4rem\]{
+    height: 5.4rem;
   }
 
   .h-\[500px\]{
@@ -641,22 +625,6 @@ video {
 
   .h-\[570px\]{
     height: 570px;
-  }
-
-  .h-\[5\.2rem\]{
-    height: 5.2rem;
-  }
-
-  .h-\[5\.4rem\]{
-    height: 5.4rem;
-  }
-
-  .h-\[5\.5rem\]{
-    height: 5.5rem;
-  }
-
-  .min-h-screen{
-    min-height: 100vh;
   }
 
   .w-12{
@@ -673,10 +641,6 @@ video {
 
   .w-full{
     width: 100%;
-  }
-
-  .max-w-3xl{
-    max-width: 48rem;
   }
 
   .max-w-4xl{
@@ -769,11 +733,6 @@ video {
     background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
   }
 
-  .bg-gray-200{
-    --tw-bg-opacity: 1;
-    background-color: rgb(229 231 235 / var(--tw-bg-opacity, 1));
-  }
-
   .bg-radial{
     background-image: radial-gradient(circle, #AAD8E6, #0066DF);
   }
@@ -790,10 +749,6 @@ video {
     padding: 0.75rem;
   }
 
-  .p-6{
-    padding: 1.5rem;
-  }
-
   .p-4{
     padding: 1rem;
   }
@@ -803,19 +758,29 @@ video {
     padding-right: 1rem;
   }
 
-  .py-2{
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-  }
-
   .px-6{
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 
+  .py-2{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
   .py-8{
     padding-top: 2rem;
     padding-bottom: 2rem;
+  }
+
+  .text-2xl{
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .text-3xl{
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 
   .text-lg{
@@ -833,14 +798,8 @@ video {
     line-height: 1.75rem;
   }
 
-  .text-2xl{
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
-
-  .text-3xl{
-    font-size: 1.875rem;
-    line-height: 2.25rem;
+  .font-bold{
+    font-weight: 700;
   }
 
   .font-medium{
@@ -849,10 +808,6 @@ video {
 
   .font-semibold{
     font-weight: 600;
-  }
-
-  .font-bold{
-    font-weight: 700;
   }
 
   .uppercase{

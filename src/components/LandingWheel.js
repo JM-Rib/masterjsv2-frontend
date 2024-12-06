@@ -1,7 +1,8 @@
 import React from 'react';
 import WheelCell from './WheelCell.js';
-import { BODY_PARTS } from '../utils/constants.js';
+import { BODY_PARTS, NATURE } from '../utils/constants.js';
 import { APP_ROUTES } from '../utils/constants.js';
+import Models from './Models.tsx';
 
 function LandingWheel(props) {
     const radius = 200; // Radius of the hexagon
@@ -43,7 +44,7 @@ function LandingWheel(props) {
 
                 return (
                     <WheelCell
-                        key={index}
+                        key={index+1}
                         model={cell.model}
                         redirectTo={cell.page}
                         style={{
@@ -55,6 +56,13 @@ function LandingWheel(props) {
                     />
                 );
             })}
+{/*                 <Models 
+                    modelPath={NATURE.SUNRISE}
+                    style={{
+                        position: 'relative',
+                        zIndex: 1,
+                    }}
+                /> */}
         </div>
     );
 }

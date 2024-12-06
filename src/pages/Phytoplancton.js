@@ -18,14 +18,14 @@ const Phytoplancton = () => {
       <Card className="mb-6 p-4 shadow-lg">
         <h2 className="text-2xl font-semibold mb-4">Les Poumons : Un Mécanisme de Filtration</h2>
         <p className="mb-4">
-          Chaque jour, les poumons humains filtrent environ **10 000 litres d'air**, extrayant l’oxygène pour alimenter le sang. Avec une surface d'échange équivalente à celle d’un terrain de tennis, les poumons transforment chaque inspiration en énergie vitale pour les cellules.
+          Chaque jour, les poumons humains filtrent environ 10 000 litres d'air, extrayant l’oxygène pour alimenter le sang. Avec une surface d'échange équivalente à celle d’un terrain de tennis, les poumons transforment chaque inspiration en énergie vitale pour les cellules.
         </p>
       </Card>
 
       <Card className="mb-6 p-4 shadow-lg">
         <h2 className="text-2xl font-semibold mb-4">Le Phytoplancton : Les Poumons de l’Océan</h2>
         <p className="mb-4">
-          Les phytoplanctons, microscopiques mais puissants, génèrent **50% de l’oxygène mondial** grâce à la photosynthèse. Présents en masse à la surface des océans, ils absorbent le dioxyde de carbone (CO₂) et libèrent de l'oxygène, jouant un rôle crucial dans la lutte contre le réchauffement climatique.
+          Les phytoplanctons, microscopiques mais puissants, génèrent 50% de l’oxygène mondial grâce à la photosynthèse. Présents en masse à la surface des océans, ils absorbent le dioxyde de carbone (CO₂) et libèrent de l'oxygène, jouant un rôle crucial dans la lutte contre le réchauffement climatique.
         </p>
       </Card>
 
@@ -33,13 +33,13 @@ const Phytoplancton = () => {
         <h2 className="text-2xl font-semibold mb-4">Similitudes Clés</h2>
         <ul className="list-disc list-inside mb-4">
           <li>
-            **Échange gazeux** : Les poumons humains échangent l’oxygène et le dioxyde de carbone avec le sang, tandis que le phytoplancton fait de même avec l’atmosphère.
+            Échange gazeux : Les poumons humains échangent l’oxygène et le dioxyde de carbone avec le sang, tandis que le phytoplancton fait de même avec l’atmosphère.
           </li>
           <li>
-            **Impact global** : Les humains dépendent de l’oxygène produit par les océans, tout comme le phytoplancton dépend du CO₂ émis par les êtres vivants.
+            Impact global : Les humains dépendent de l’oxygène produit par les océans, tout comme le phytoplancton dépend du CO₂ émis par les êtres vivants.
           </li>
           <li>
-            **Sensibilité environnementale** : Une mauvaise qualité de l'air nuit aux poumons, tout comme la pollution de l'eau affecte le phytoplancton.
+            Sensibilité environnementale : Une mauvaise qualité de l'air nuit aux poumons, tout comme la pollution de l'eau affecte le phytoplancton.
           </li>
         </ul>
       </Card>
