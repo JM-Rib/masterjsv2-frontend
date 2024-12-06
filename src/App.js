@@ -14,10 +14,10 @@ import Biosphere from './pages/Biosphere.js';
 function App() {
   return (
       <div className="App">
+          <BrowserRouter>
+          <ModelInstanceProvider>
           <Navbar className='' style={{zIndex: 99}} />
           <div className='h-[5.6rem]'></div>
-          <BrowserRouter>
-            <ModelInstanceProvider>
               <Routes>
                   <Route
                     path="/"

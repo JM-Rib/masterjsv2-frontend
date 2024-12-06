@@ -4,9 +4,16 @@ import { Canvas, useLoader, useFrame } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"; 
 import { useModelInstance } from '../provider/ModelInstanceProvider.tsx';
 
+interface heightType {
+    x: string,
+    y: string
+}
+
 interface ModelsProps {
     position?: Vector3; 
     modelPath: string;
+    height?: heightType;
+    zoom?: number
 }
 
 function HoverObject({ meshRef, cachedModel, rotation, position }) {
@@ -36,7 +43,7 @@ function HoverObject({ meshRef, cachedModel, rotation, position }) {
     );
 }
   
-const Models: React.FC<ModelsProps> = ({ position = new Vector3(0, 0, 0), modelPath }) => {
+const Models: React.FC<ModelsProps> = ({ position = new Vector3(0, 0, 0), modelPath, height = {x : "10rem", y: "10rem"}, zoom = 2 }) => {
     const { addModel, getModel } = useModelInstance();
     const [modelLoaded, setModelLoaded] = useState<boolean>(false);
     const [rotation, setRotation] = useState({ x: 0, y: 0 }); // rotation souris 
@@ -85,12 +92,12 @@ const Models: React.FC<ModelsProps> = ({ position = new Vector3(0, 0, 0), modelP
             style={{
                 display: 'inline-block',
                 verticalAlign: 'middle',
-                width: '10rem',
-                height: '10rem',
+                width: height.x,
+                height: height.y,
                 marginRight: '0.2em',
             }}
         >
-            <Canvas shadows camera={{ position: [0, 0, 3], fov: 65, zoom: 2 }}>
+            <Canvas shadows camera={{ position: [0, 0, 3], fov: 65, zoom: zoom }}>
                 <pointLight position={[1, 2, 2]} intensity={18} castShadow />
                 {modelLoaded && cachedModel && (
                     <HoverObject

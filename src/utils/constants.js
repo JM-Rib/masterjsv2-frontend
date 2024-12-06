@@ -32,6 +32,10 @@ export const OBJECTS = {
   GOAL: `/objects/goal_net.gltf`
 }
 
+export const NATURE = {
+  SUNRISE: `/nature/sunrise.gltf`
+}
+
 export const BODY_PARTS = {
   BLOOD: `/bodyparts/drop_of_blood.gltf`,
   EYES: `/bodyparts/eyes.gltf`,
