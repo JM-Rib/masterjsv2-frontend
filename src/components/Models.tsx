@@ -13,7 +13,7 @@ function HoverObject({ meshRef, cachedModel, rotation, position }) {
     useFrame(() => {
         if (meshRef.current) {
             const dummy = new Object3D();
-            dummy.scale.set(1, 1, 1); 
+            dummy.scale.set(0.7, 0.7, 0.7); 
             dummy.position.set(position.x, position.y, position.z);
             dummy.rotation.set(-rotation.y, 0, -rotation.x); // rotation
             dummy.updateMatrix();
@@ -85,13 +85,13 @@ const Models: React.FC<ModelsProps> = ({ position = new Vector3(0, 0, 0), modelP
             style={{
                 display: 'inline-block',
                 verticalAlign: 'middle',
-                width: '6rem',
-                height: '6rem',
+                width: '10rem',
+                height: '10rem',
                 marginRight: '0.2em',
             }}
         >
-            <Canvas shadows camera={{ position: [0, 0, 2], fov: 65, zoom: 1 }}>
-                <pointLight position={[1, 1, 2]} intensity={8} castShadow />
+            <Canvas shadows camera={{ position: [0, 0, 3], fov: 65, zoom: 2 }}>
+                <pointLight position={[1, 2, 2]} intensity={18} castShadow />
                 {modelLoaded && cachedModel && (
                     <HoverObject
                         meshRef={meshRef}

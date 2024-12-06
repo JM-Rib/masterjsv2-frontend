@@ -2,7 +2,11 @@
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'radial': 'radial-gradient(circle, #AAD8E6, #0066DF)', // Custom radial gradient
+      },
+    }
   },
   plugins: [],
 }

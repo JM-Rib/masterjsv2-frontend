@@ -23,7 +23,16 @@ export const BALLS = {
 }
 
 export const OBJECTS = {
-  GOAL: `/objects/goal_net.gltf`,
-  BLOOD: `/objects/drop_of_blood.gltf`,
-  HEART: `/objects/anatomical_heart.gltf`,
+  GOAL: `/objects/goal_net.gltf`
+}
+
+export const BODY_PARTS = {
+  BLOOD: `/bodyparts/drop_of_blood.gltf`,
+  EYES: `/bodyparts/eyes.gltf`,
+  MOUTH: `/bodyparts/mouth.gltf`,
+  LUNGS: `/bodyparts/lungs.gltf`,
+  BONE: `/bodyparts/bone.gltf`,
+  BRAIN: `/bodyparts/brain.gltf`,
+  HEART: `/bodyparts/anatomical_heart.gltf`,
+  DNA: `/bodyparts/dna.gltf`
 }
