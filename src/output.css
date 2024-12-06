@@ -587,20 +587,12 @@ video {
     margin-bottom: 1.5rem;
   }
 
-  .block{
-    display: block;
-  }
-
   .flex{
     display: flex;
   }
 
   .grid{
     display: grid;
-  }
-
-  .hidden{
-    display: none;
   }
 
   .h-12{
@@ -621,10 +613,6 @@ video {
 
   .h-\[570px\]{
     height: 570px;
-  }
-
-  .h-full{
-    height: 100%;
   }
 
   .h-screen{

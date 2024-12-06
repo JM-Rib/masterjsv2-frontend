@@ -1,5 +1,7 @@
 export const API_ROUTES = {
   LOGIN: `/admin/login`,
+  CAPTCHA: `/captcha`,
+  EMAIL: `/email`,
 }
   
 export const APP_ROUTES = {
@@ -30,7 +32,7 @@ export const BALLS = {
   Scale: 0.7,
   FOOTBALL: `/balls/soccer_ball.gltf`,
   BASKETBALL: `/balls/basketball.gltf`,
-  VOLEYBALL: `/balls/voleyball.gltf`,
+  VOLLEYBALL: `/balls/volleyball.gltf`,
   POOL_8_BALL: `/balls/pool_8_ball.gltf`,
 }
 

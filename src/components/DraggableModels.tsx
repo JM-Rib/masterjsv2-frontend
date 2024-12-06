@@ -12,12 +12,13 @@ import { useGLTF } from "@react-three/drei";
 interface CubeProps {
   position?: [number, number, number];
   scale?: number;
+  modelPath: string,
 }
 
-function Cube({ position = [0.5, 0.5, -0.5], scale = 1, ...props }: CubeProps) {
+function Cube({ modelPath, position = [0.5, 0.5, -0.5], scale = 1, ...props }: CubeProps) {
   const ref = useRef<Object3D>(null);
   const pos = useRef(new ThreeVector3(...position));
-  const { scene } = useGLTF(BALLS.FOOTBALL); // chargement modele.
+  const { scene } = useGLTF(modelPath); // chargement modele.
 
   const onDrag = useCallback(
     ({ x, z }: { x: number; z: number }) => {
@@ -63,9 +64,9 @@ function Cube({ position = [0.5, 0.5, -0.5], scale = 1, ...props }: CubeProps) {
   );
 }
 
-function Goal({ position = [0.5, 0.5, 0.5], scale = 1 }: CubeProps) {
+function Goal({ modelPath, position = [0.5, 0.5, 0.5], scale = 1 }: CubeProps) {
   const ref = useRef<Object3D>(null);
-  const { scene } = useGLTF(OBJECTS.GOAL); // chargement modele.
+  const { scene } = useGLTF(modelPath); // chargement modele.
 
   useEffect(() => { // nécessaire pour rajouter des ombres au modele.
     scene.children.forEach((mesh, i) => {
@@ -86,15 +87,18 @@ function Goal({ position = [0.5, 0.5, 0.5], scale = 1 }: CubeProps) {
   );
 }
 
-export default function DraggableModels() {
+export default function DraggableModels({props}) {
   return (
     <Canvas shadows camera={{ position: [0, 3, 9], fov:65 }} style={{height: "250px"}}>
       <ambientLight intensity={3} castShadow />
       <pointLight decay={0} intensity={2} position={[10, 10, -5]} castShadow shadow-mapSize-width={1024} shadow-mapSize-height={1024} />
       <Grid scale={10}>
-        <Cube position={[-1.5, BALLS.Scale, 4.5]} scale={BALLS.Scale} />
+        <Cube modelPath={BALLS.FOOTBALL} position={[-3.5, BALLS.Scale, 4.5]} scale={BALLS.Scale} />
+        <Cube modelPath={BALLS.BASKETBALL} position={[-1.5, BALLS.Scale, 4.5]} scale={BALLS.Scale} />
+        <Cube modelPath={BALLS.POOL_8_BALL} position={[1.5, BALLS.Scale, 4.5]} scale={BALLS.Scale} />
+        <Cube modelPath={BALLS.VOLLEYBALL} position={[3.5, BALLS.Scale, 4.5]} scale={BALLS.Scale} />
       </Grid> 
-      <Goal position={[0, 1.2, -4]} scale={2} />
+      <Goal modelPath={OBJECTS.GOAL} position={[0, 1.2, -4]} scale={2} />
       <OrbitControls target={[0, 2.3, 0]} enablePan={false} enableRotate={false} enableZoom={false} />
     </Canvas>
   );
