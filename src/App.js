@@ -8,7 +8,7 @@ import { ModelInstanceProvider } from './provider/ModelInstanceProvider.tsx';
 function App() {
   return (
       <div className="App">
-          <Navbar className='' />
+          <Navbar className='' style={{zIndex: 99}} />
           <BrowserRouter>
             <ModelInstanceProvider>
               <Routes>

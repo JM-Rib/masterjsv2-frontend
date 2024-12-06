@@ -1,86 +1,11 @@
 import React from 'react';
-import LandingWheel from '../components/LandingVideo';;
+import LandingWheel from '../components/LandingWheel';
 function Accueil(props) {
   
 	return (
     <div>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
+        <div className='h-[5.6rem]'></div>
         <LandingWheel></LandingWheel>
-        <LandingWheel></LandingWheel>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
-        test <br></br>
     </div>
     );
 }

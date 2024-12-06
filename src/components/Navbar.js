@@ -165,7 +165,7 @@ export default function Navbar() {
 
     return (
         <>
-            <div className={`fixed p-4 w-full text-white transition-transform duration-300 ${
+            <div className={`z-[100] fixed p-4 w-full text-white transition-transform duration-300 ${
                 isVisible ? "translate-y-0" : "-translate-y-full"
               } 
             `}>

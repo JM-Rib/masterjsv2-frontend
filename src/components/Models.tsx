@@ -15,10 +15,10 @@ function HoverObject({ meshRef, cachedModel, rotation, position }) {
             const dummy = new Object3D();
             dummy.scale.set(1, 1, 1); 
             dummy.position.set(position.x, position.y, position.z);
-            dummy.rotation.set(rotation.y, rotation.x, 0); // Apply rotation
+            dummy.rotation.set(-rotation.y, 0, -rotation.x); // rotation
             dummy.updateMatrix();
-            meshRef.current.setMatrixAt(0, dummy.matrix); // Update the instance
-            meshRef.current.instanceMatrix.needsUpdate = true; // Notify for update
+            meshRef.current.setMatrixAt(0, dummy.matrix); // maj
+            meshRef.current.instanceMatrix.needsUpdate = true; // update
         }
     });
 
