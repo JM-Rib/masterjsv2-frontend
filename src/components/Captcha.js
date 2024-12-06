@@ -20,7 +20,7 @@ const Captcha = (props) => {
         <div className="card flex justify-content-center">
             <Card title="Êtes vous un bot?" footer={footer} header={header} className="md:w-[25rem] h-[500px]">
                 <p className="m-0">
-                    Mbappe
+                    Rendez fier Mbappe ! 
                 </p>
             </Card>
         </div>
