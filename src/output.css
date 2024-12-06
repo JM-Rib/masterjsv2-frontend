@@ -623,6 +623,14 @@ video {
     height: 570px;
   }
 
+  .h-full{
+    height: 100%;
+  }
+
+  .h-screen{
+    height: 100vh;
+  }
+
   .w-12{
     width: 3rem;
   }
@@ -767,6 +775,10 @@ video {
   .py-8{
     padding-top: 2rem;
     padding-bottom: 2rem;
+  }
+
+  .text-center{
+    text-align: center;
   }
 
   .text-2xl{

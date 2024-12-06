@@ -11,8 +11,7 @@ const Captcha = (props) => {
 
     const footer = (
         <>
-            <Button label="Save" icon="pi pi-check" />
-            <Button label="Cancel" severity="secondary" icon="pi pi-times" style={{ marginLeft: '0.5em' }} />
+            <Button label="Valider" icon="pi pi-check" />
         </>
     );
 

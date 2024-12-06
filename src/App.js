@@ -12,6 +12,7 @@ import Corail from './pages/Corail.js';
 import Biosphere from './pages/Biosphere.js';
 import Ressources from './pages/Ressources.js';
 import Contact from './pages/Contact.js';
+import Information from './pages/Information.js';
 
 function App() {
   return (
@@ -24,6 +25,10 @@ function App() {
                   <Route
                     path="/"
                     element={<Accueil />}
+                  />
+                  <Route
+                    path={APP_ROUTES.INFORMATION}
+                    element={<Information />}
                   />
                   <Route
                     path={APP_ROUTES.RESSOURCES}

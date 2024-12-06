@@ -92,7 +92,7 @@ export default function DraggableModels() {
       <ambientLight intensity={3} castShadow />
       <pointLight decay={0} intensity={2} position={[10, 10, -5]} castShadow shadow-mapSize-width={1024} shadow-mapSize-height={1024} />
       <Grid scale={10}>
-        <Cube position={[-1.5, BALLS.Scale, 2.5]} scale={BALLS.Scale} />
+        <Cube position={[-1.5, BALLS.Scale, 4.5]} scale={BALLS.Scale} />
       </Grid> 
       <Goal position={[0, 1.2, -4]} scale={2} />
       <OrbitControls target={[0, 2.3, 0]} enablePan={false} enableRotate={false} enableZoom={false} />

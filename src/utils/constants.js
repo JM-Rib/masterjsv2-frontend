@@ -5,6 +5,7 @@ export const API_ROUTES = {
 export const APP_ROUTES = {
   LOGIN: `/login`,
   ACCUEIL: `/`,
+  INFORMATION: `/information`,
   CONTACT: `/contact`,
   RESSOURCES: `/ressources`,
   POMPE_THERMOHALINE: `/pompeThermohaline`,
@@ -28,12 +29,19 @@ export const APP_ROUTES = {
 export const BALLS = {
   Scale: 0.7,
   FOOTBALL: `/balls/soccer_ball.gltf`,
+  BASKETBALL: `/balls/basketball.gltf`,
+  VOLEYBALL: `/balls/voleyball.gltf`,
+  POOL_8_BALL: `/balls/pool_8_ball.gltf`,
 }
 
 export const OBJECTS = {
   GOAL: `/objects/goal_net.gltf`,
   LINK: `/objects/link.gltf`,
   INCOMING_ENVELOPE: `/objects/incoming_envelope.gltf`
+}
+
+export const SYMBOLS = {
+  INFORMATION: `/symbols/information.gltf`,
 }
 
 export const PLACES = {
