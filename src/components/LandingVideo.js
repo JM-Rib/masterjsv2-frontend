@@ -14,7 +14,7 @@ function LandingWheel(props) {
   
 	return (
         <div className="w-24 h-24 bg-blue-200 rounded-full">
-            <Models modelPath={ OBJECTS.BLOOD }></Models>
+            <Models modelPath={OBJECTS.BLOOD}></Models>
         </div>
     );
 }
